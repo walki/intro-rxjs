@@ -1,10 +1,7 @@
 # intro-rxjs
-Stuff from udemy course, Reactive JS
 
-## Done
-[ x ] Set up build process using gulp, watchify, babel and broweserify
+Working environment for learning RxJS for following along with the Udmeny course, Reactive JS:  Are you ready for the next big paradigm shift?
 
-## TODO
-[ ] Motivation - traditional vs reactive
+Note: Uses RxJS 6 and Typescript, so some changes are made from the course.
 
-[ ] Watch his other series for more info on gulp!
+Run the live server from the getting-started folder using `npm run start`

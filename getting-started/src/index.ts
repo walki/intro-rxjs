@@ -5,13 +5,6 @@ import * as $ from 'jquery';
 const $search = $('#search');
 const $results = $('#results');
 
-let observable = Observable.create((observer: any) => {
-    observer.next('Hello World!');
-    observer.next('Hello Again!');
-    observer.complete();
-    observer.next('Bye');
-});
-
 const queries$ = fromEvent<KeyboardEvent>($search, 'keyup')
     .pipe(
         map((e: KeyboardEvent) => (e.target as HTMLInputElement).value),
@@ -19,7 +12,6 @@ const queries$ = fromEvent<KeyboardEvent>($search, 'keyup')
         distinctUntilChanged(),
         switchMap(query => getItems(query)),
     );
-
 
 queries$.subscribe((items : Array<string>)  => {
     $results.empty();
@@ -29,20 +21,6 @@ queries$.subscribe((items : Array<string>)  => {
         })
     );
 });
-
-
-observable.subscribe(
-    (x: any) => logItem(x),
-    (error: any) => logItem('Error: ' + error),
-    () => logItem('Completed')
-);
-
-function logItem(val: any) {
-    var node = document.createElement('li');
-    var textnode = document.createTextNode(val);
-    node.appendChild(textnode);
-    document.getElementById('list').appendChild(node);
-}
 
 function getItems(search: string) {
     console.log(`Querying ${search}`);
