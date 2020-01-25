@@ -15205,17 +15205,13 @@ return jQuery;
 },{}],3:[function(require,module,exports){
 "use strict";
 
-var _moment = require("moment");
+var _moment = _interopRequireDefault(require("moment"));
 
-var _moment2 = _interopRequireDefault(_moment);
+var _jquery = _interopRequireDefault(require("jquery"));
 
-var _jquery = require("jquery");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)('body').text((0, _moment2.default)().format());
+(0, _jquery["default"])('body').text((0, _moment["default"])().format());
 console.log("helloooo");
 
 },{"jquery":1,"moment":2}]},{},[3]);
